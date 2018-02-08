@@ -1,3 +1,8 @@
+dev.off()
+
+fileurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(fileurl, destfile = "./data/plot.zip")
+unzip("./data/plot.zip", exdir  ="./data")
 data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'))
 
 data$Date <- as.Date(data$Date, "%d/%m/%Y")
